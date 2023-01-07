@@ -1,4 +1,9 @@
-import { capitalise, reverseString, calculator } from "./script.js";
+import {
+    capitalise,
+    reverseString,
+    calculator,
+    caesarCipher,
+} from "./script.js";
 
 // capitalise string tests
 describe("capitalise", () => {
@@ -63,5 +68,29 @@ describe("calculator object", () => {
         test("takes 2 and 4 as args returning 8", () => {
             expect(calculator.multiply(2, 4)).toBe(8);
         });
+    });
+});
+
+describe("cesarCipser", () => {
+    test("works with single letters", () => {
+        expect(caesarCipher("A", 1)).toBe("B");
+    });
+    test("works with words", () => {
+        expect(caesarCipher("Aaa", 1)).toBe("Bbb");
+    });
+    test.skip("works with phrases", () => {
+        expect(caesarCipher("Hello, World!", 5)).toBe("Mjqqt, Btwqi!");
+    });
+    test.skip("works with negative shift", () => {
+        expect(caesarCipher("Mjqqt, Btwqi!", -5)).toBe("Hello, World!");
+    });
+    test.skip("wraps", () => {
+        expect(caesarCipher("Z", 1)).toBe("A");
+    });
+    test.skip("works with large shift factors", () => {
+        expect(caesarCipher("Hello, World!", 75)).toBe("Ebiil, Tloia!");
+    });
+    test.skip("works with large negative shift factors", () => {
+        expect(caesarCipher("Hello, World!", -29)).toBe("Ebiil, Tloia!");
     });
 });

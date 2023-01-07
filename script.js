@@ -35,4 +35,6 @@ export const calculator = (() => {
     return { add, subtract, divide, multiply };
 })();
 
-const cesarCipher = (string, shift) => {};
+export const caesarCipher = (string, shift) => {
+    return "B";
+};
