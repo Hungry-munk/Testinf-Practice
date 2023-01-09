@@ -3,6 +3,7 @@ import {
     reverseString,
     calculator,
     caesarCipher,
+    analyseArray,
 } from "./script.js";
 
 // capitalise string tests
@@ -92,5 +93,24 @@ describe("cesarCipser", () => {
     });
     test("works with large negative shift factors", () => {
         expect(caesarCipher("Hello, World!", -29)).toBe("Ebiil, Tloia!");
+    });
+});
+
+describe("anlyse array", () => {
+    test("takes  the array [1,8,3,4,2,6] and outputs correct stats ", () => {
+        expect(analyseArray([1, 8, 3, 4, 2, 6])).toEqual({
+            average: 4,
+            min: 1,
+            max: 8,
+            length: 6,
+        });
+    });
+    test("random test using weird array [1,1,1,1,1,1]", () => {
+        expect(analyseArray([1, 1, 1, 1, 1, 1])).toEqual({
+            average: 1,
+            min: 1,
+            max: 1,
+            length: 6,
+        });
     });
 });
