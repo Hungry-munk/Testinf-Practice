@@ -71,7 +71,7 @@ describe("calculator object", () => {
         });
     });
 });
-
+// cesarCipser function
 describe("cesarCipser", () => {
     test("works with single letters", () => {
         expect(caesarCipher("A", 1)).toBe("B");
@@ -95,7 +95,7 @@ describe("cesarCipser", () => {
         expect(caesarCipher("Hello, World!", -29)).toBe("Ebiil, Tloia!");
     });
 });
-
+//  analyse array function
 describe("anlyse array", () => {
     test("takes  the array [1,8,3,4,2,6] and outputs correct stats ", () => {
         expect(analyseArray([1, 8, 3, 4, 2, 6])).toEqual({

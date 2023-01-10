@@ -37,7 +37,7 @@ export const calculator = (() => {
 
 // caeserCipher functions
 
-const shiftCode = (code, shift, min, max) => {
+const shiftCharCode = (code, shift, min, max) => {
     let newCode = code + shift;
     if (newCode > max) {
         while (newCode > max) newCode = min + (newCode % max) - 1;
@@ -53,10 +53,10 @@ export const caesarCipher = (string, shift) => {
         .map(code => {
             if (code >= 65 && code <= 90) {
                 // capital letter
-                return shiftCode(code, shift, 65, 90);
+                return shiftCharCode(code, shift, 65, 90);
             } else if (code >= 97 && code <= 122) {
                 // lower case letter
-                return shiftCode(code, shift, 97, 122);
+                return shiftCharCode(code, shift, 97, 122);
             }
             // not a letter
             return code;
